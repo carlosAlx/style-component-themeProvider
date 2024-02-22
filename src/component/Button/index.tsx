@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from "react-native";
+import { Button, Pressable, Text, View } from "react-native";
 import React, { useContext, useState } from "react";
 import * as B from "./Style";
 import { ThemeContext } from "styled-components";
@@ -14,6 +14,7 @@ const ButtonTheme = ({ onPress }: Props) => {
       <B.ButtonTheme onPress={onPress}>
         <Text>change theme</Text>
       </B.ButtonTheme>
+      <Button  title="teste" color={themeProvider?.colors.secondary.primary}/>
     </View>
   );
 };

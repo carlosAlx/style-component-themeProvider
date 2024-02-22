@@ -1,12 +1,11 @@
 import styled from "styled-components/native";
-import { Feather } from "@expo/vector-icons";
 
 export const Container = styled.View`
   width: 90%;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.primary.onMain};
 `;
 export const IconContent = styled.View`
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.secondary.primary};
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,5 +16,5 @@ export const IconContent = styled.View`
   width: 70px;
 `;
 export const TextIcon = styled.Text`
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary.onMain};
 `;

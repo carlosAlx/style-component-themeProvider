@@ -1,29 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, useColorScheme } from "react-native";
 import { ThemeProvider } from "styled-components";
 import Home from "./src/component/Home";
-import { useState } from "react";
 import ButtonTheme from "./src/component/Button";
-import { themeDark } from "./src/styles/theme/dark";
-import { themeLight } from "./src/styles/theme/light";
+import useAppearance from "./src/useAppearance";
 
 export default function App() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const { theme, currentTheme } = useAppearance();
+
   return (
-    <ThemeProvider theme={theme === "light" ? themeLight : themeDark}>
+    <ThemeProvider theme={theme}>
       <View style={styles.container}>
         <Text>Open up App.tsx to start working on your app!</Text>
         <Home />
-        <ButtonTheme   onPress={() =>
-          setTheme((old) => {
-            if (old === "light") {
-              return "dark";
-            } else {
-              return "light";
-            }
-          })
-        } />
-
+        <ButtonTheme onPress={()=>{console.log(theme)}}/>
         <StatusBar style="auto" />
       </View>
     </ThemeProvider>
